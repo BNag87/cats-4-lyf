@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./Product.css";
+var faker = require('faker');
 
 const Product = () => {
   const [productItem, setProductItem] = useState([]);
@@ -10,9 +11,9 @@ const Product = () => {
     GetProduct();
   }, []);
 
-  const GetProduct = () => {
+  const GetProduct = async () => {
     console.log("Run");
-    fetch("https://api.thecatapi.com/v1/images/search?limit=10", {
+    await fetch("https://api.thecatapi.com/v1/images/search?limit=10", {
       headers: {
         "x-api-key": apiKey,
       },
@@ -21,8 +22,8 @@ const Product = () => {
       .then((cats) => {
         for (let i = 0; i < cats.length; i++) {
           const cat = cats[i];
-          cat.price = 100;
-          cat.name = "Cat";
+          cat.price = faker.commerce.price();
+          cat.name = faker.animal.cat();
         }
         setProductItem(cats);
         console.log(cats);
@@ -31,10 +32,12 @@ const Product = () => {
         console.log("Error: ", error);
       });
   };
-
+  
   return (
+    
     <div className="display-board">
-      {productItem.map((product) => (
+      
+      {productItem.map((product, price) => (
         <div className="product-container">
           <div className="image-container">
             <img src={product.url} alt={product.name} />
@@ -42,7 +45,7 @@ const Product = () => {
           <div className="product-content">
             <>
               <div className="product.Name">{product.name}</div>
-              <div className="product.Price">£{product.price}</div>
+              <div className="product.Price">{product.price}</div>
             </>
           </div>
           <div className="btn">

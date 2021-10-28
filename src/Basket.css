@@ -1,0 +1,14 @@
+.paymentWrapper{
+    justify-content:center;
+    align-items: center;
+    margin-left: 90%;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+
+    border: solid black 3px;
+    border-radius: 10px;
+    background-color: lightgoldenrodyellow;
+    width:fit-content;
+}
