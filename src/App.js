@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./Home";
-import Contacts from "./Contacts";
+import BasketList from "./BasketList";
 import About from "./About";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -26,8 +26,8 @@ function App() {
               <About />
             </Route>
 
-            <Route exact path = "/contact">
-              <Contacts/>
+            <Route exact path = "/basketList">
+              <BasketList/>
               
               {/* Basket takes 'props'. messsage displays a <h2> tag. total needs to be calculated, then passed in*/}
               <Basket message="Total" total="499.99"/>
