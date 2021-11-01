@@ -1,0 +1,13 @@
+.about {
+    margin-top: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+    
+    flex-wrap: wrap;
+}
+
+ul {
+    font-size: 1rem;
+}

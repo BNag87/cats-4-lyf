@@ -37,11 +37,15 @@ const App = () => {
               <About />
             </Route>
 
-            <Route exact path="/contact">
-              <Contacts />
+            <Route exact path="/basketList">
+              <BasketList />
 
               {/* Basket takes 'props'. messsage displays a <h2> tag. total needs to be calculated, then passed in*/}
               <Basket basket={basket} />
+            </Route>
+
+            <Route exact path="/contact">
+              <Contacts />
             </Route>
           </Switch>
         </div>
@@ -50,5 +54,3 @@ const App = () => {
     </Router>
   );
 };
-
-export default App;
