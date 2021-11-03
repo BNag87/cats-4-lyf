@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/cats-4-lyf/static/css/main.d88c589e.chunk.css",
+    "main.js": "/cats-4-lyf/static/js/main.e78a8c99.chunk.js",
+    "main.js.map": "/cats-4-lyf/static/js/main.e78a8c99.chunk.js.map",
+    "runtime-main.js": "/cats-4-lyf/static/js/runtime-main.37d00fcc.js",
+    "runtime-main.js.map": "/cats-4-lyf/static/js/runtime-main.37d00fcc.js.map",
+    "static/js/2.55972322.chunk.js": "/cats-4-lyf/static/js/2.55972322.chunk.js",
+    "static/js/2.55972322.chunk.js.map": "/cats-4-lyf/static/js/2.55972322.chunk.js.map",
+    "index.html": "/cats-4-lyf/index.html",
+    "static/css/main.d88c589e.chunk.css.map": "/cats-4-lyf/static/css/main.d88c589e.chunk.css.map",
+    "static/js/2.55972322.chunk.js.LICENSE.txt": "/cats-4-lyf/static/js/2.55972322.chunk.js.LICENSE.txt",
+    "static/media/cat.418fa995.png": "/cats-4-lyf/static/media/cat.418fa995.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.37d00fcc.js",
+    "static/js/2.55972322.chunk.js",
+    "static/css/main.d88c589e.chunk.css",
+    "static/js/main.e78a8c99.chunk.js"
+  ]
+}
