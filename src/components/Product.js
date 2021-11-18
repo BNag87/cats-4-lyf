@@ -1,15 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Default from "./Default";
 import "./Product.css";
-import Basket from "../basilsComponents/Basket";
-
 var faker = require('faker');
 
-
-
-  //----------→ COMPONENT SECTION ----------→
-  //----------→ Meant to contain all logic for component
 const Product = ({bket, sbket}) => {
   const [productItem, setProductItem] = useState([]);
   const apiKey = "ca70e52c-2990-4050-a666-5e2e97cb5784";
@@ -18,14 +11,9 @@ const Product = ({bket, sbket}) => {
     GetProduct();
   }, []);
 
-  //----------→ FETCH SECTION ----------→
-  //----------→ Meant to get a random cat from an API
-  const GetProduct = () => {
-
   const GetProduct = async () => {
-
-    console.log("Run");
-    await fetch("https://api.thecatapi.com/v1/images/search?limit=12", {
+    console.log("Running the getProduct function in Product.js...");
+    await fetch("https://api.thecatapi.com/v1/images/search?limit=10", {
       headers: {
         "x-api-key": apiKey,
       },
@@ -42,40 +30,20 @@ const Product = ({bket, sbket}) => {
       })
       .catch((error) => {
         console.log("Error: ", error);
-        <Default />
       });
   };
-
+  
   const basketHandler = (cat) => {
-    console.log("In 'basketHandler', bket is: "+ bket)
+    console.log("In 'basketHandler', cat parameter is: "+ cat)
     let tempArr = bket;
     tempArr.push(cat);
+    console.log("In 'basketHandler', cat was pushed into tempArr, It is now: "+ tempArr)
     sbket(tempArr) //shorthand calls from app
     
   };
 
   return (
-    <div className="product-container">
-      <div className="image-container">
-        {/* map through the productitems, pass 'product' and the index of the new array... */}
-      {productItem.map((product, index) => (
-          <>
-          {/* create an image from the API url, also alt text if it fails to load... */}
-          <img src={product.url} alt={product.name} />
-
-          {/* Pass the JSX name of the product */}
-            <div className="product.Name">{product.name}</div>
-
-          {/* Pass the JSX name of the product */}
-            <div className="product.Price">£{product.price}</div>
-
-            <button onClick={() => basketHandler(product)}>Add to Basket</button>
-            
-          </>
-        ))}
-      </div>
-
-  return (
+    // This displays cat cars with randomly generated images, names and prices
     <div className="display-board">
       
       {productItem.map((product, price) => (
@@ -90,13 +58,10 @@ const Product = ({bket, sbket}) => {
             </>
           </div>
           <div className="btn">
-        <button>
-          <a>Add to Basket</a>
-        </button>
-      </div>
+            <button onClick={() => basketHandler(product)}>Add to Basket</button>
+          </div>
         </div>
       ))}
-
     </div>
   );
 };
