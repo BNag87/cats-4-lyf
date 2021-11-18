@@ -38,7 +38,6 @@ const App = () => {
             </Route>
 
             <Route exact path="/basketList">
-              <BasketList />
 
               {/* Basket takes 'props'. messsage displays a <h2> tag. total needs to be calculated, then passed in*/}
               <Basket basket={basket} />
